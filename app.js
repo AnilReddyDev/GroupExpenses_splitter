@@ -1,10 +1,10 @@
-//taking names as input from user
+//these variables used to take names as input from user
 let firstname = prompt("First Name :")
 let secondname = prompt("Second Name :")
 let thirdname = prompt("Third Name :")
 let fourthname = prompt("Fourth Name :")
 
-//these are output div elements
+//these variables are output div elements
 let totalEl = document.getElementById("total-el")
 let perpersonEl = document.getElementById("perperson-el")
 let firstpersonEl = document.getElementById("firper-el")
@@ -12,7 +12,7 @@ let secondpersonEl = document.getElementById("secper-el")
 let thirdpersonEl = document.getElementById("thiper-el")
 let fourthpersonEl = document.getElementById("fouper-el")
 
-//these are input div elements
+//these variables are input div elements
 let firstnameEl = document.querySelector("label[for=first]")
 let secondnameEl = document.querySelector("label[for=second]")
 let thirdnameEl = document.querySelector("label[for=third]")
@@ -27,7 +27,7 @@ fourthnameEl.innerHTML += fourthname
 //funxtionto calculate the given input values
 function cal(){
 
-    //these elements used to fetch input data from inputelements
+    //these variables are elements used to fetch input data from inputelements
     let firstInput = document.querySelector("#firint").value;
     let secondInput = document.querySelector("#secint").value;
     let thirdInput = document.querySelector("#thirint").value;
