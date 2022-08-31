@@ -7,13 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-        </style>
+    </style>
     <title>KG MoneySpliter</title>
+    <link rel="shortcut icon" href="faviicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class='inputdiv'>
+        <div class="dropdown">
+            <button class="dropbtn">Help!</button>
+            <div class="dropdown-content">
+                <a href="#">for people who contributed nothing atleast give input as ₹1 </a>
+                <a href="#">If ur 2 people then 3rd & 4th box should be given input as 0 </a>
+                <a href="#">If ur 3 people then 4th box should be given input as 0 </a>
+            </div>
+        </div>
         <div class="inside">
             <label for="first">
                 <input type="number" id="firint" placeholder="Noinput=0"> : </label>
@@ -33,6 +42,7 @@
         <p id="secper-el">Name :</p>
         <p id="thiper-el">Name :</p>
         <p id="fouper-el">Name :</p>
+
     </div>
     <script src="app.js"></script>
 </body>
