@@ -19,8 +19,10 @@ for(var i=1;i <= howmanypeoples;i++){
         case 5:
             pname.fifth = prompt("Fifth Name :")
             break
+        case 6:
+            pname.sixth = prompt("sixth Name")
         default:
-            alert("input Error")
+            console.log("loop workig!")
     }
 }
 if(pname.third==undefined){
@@ -31,6 +33,9 @@ if(pname.fourth==undefined){
 }
 if(pname.fifth==undefined){
     pname.fifth= null
+}
+if(pname.sixth==undefined){
+    pname.sixth= null
 }
 // let firstname = prompt("First Name :")
 // let secondname = prompt("Second Name :")
@@ -46,6 +51,7 @@ let secondpersonEl = document.getElementById("secper-el")
 let thirdpersonEl = document.getElementById("thiper-el")
 let fourthpersonEl = document.getElementById("fouper-el")
 let fifthpersonEl = document.getElementById("fifper-el")
+let sixthpersonEl = document.getElementById("sixper-el")
 
 //these variables are input div elements
 let firstnameEl = document.querySelector("label[for=firint]")
@@ -53,6 +59,7 @@ let secondnameEl = document.querySelector("label[for=secint]")
 let thirdnameEl = document.querySelector("label[for=thirint]")
 let fourthnameEl = document.querySelector("label[for=fouint]")
 let fifthnameEl = document.querySelector("label[for=fifint]")
+let sixthnameEl = document.querySelector("label[for=sixint]")
 
 //pushing names beside input boxs 
 firstnameEl.innerHTML += pname.first 
@@ -60,6 +67,7 @@ secondnameEl.innerHTML += pname.second
 thirdnameEl.innerHTML += pname.third
 fourthnameEl.innerHTML += pname.fourth
 fifthnameEl.innerHTML += pname.fifth
+sixthnameEl.innerHTML += pname.sixth
 
 //funxtionto calculate the given input values
 function cal(){
@@ -70,8 +78,9 @@ function cal(){
     let thirdInput = document.querySelector("#thirint").value;
     let fourthInput = document.querySelector("#fouint").value;
     let fifthInput = document.querySelector("#fifint").value;
+    let sixthInput = document.querySelector("#sixint").value;
 
-    let total = parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput) + parseInt(fourthInput) + parseInt(fifthInput);
+    let total = parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput) + parseInt(fourthInput) + parseInt(fifthInput) + parseInt(sixthInput);
     
     let count = 0
     if (firstInput != ""){
@@ -109,6 +118,13 @@ function cal(){
         count = count - 1
     }
 
+    if (sixthInput != ""){
+        count = count + 1
+    }
+    if(sixthInput == 0){
+        count = count - 1
+    }
+
     totalEl.textContent = "Total : " + "₹ " + total;
     let perperson = total/count
     perpersonEl.textContent = "Per Person : " + "₹ " + perperson;
@@ -127,6 +143,9 @@ function cal(){
     if (fifthInput != 0  ){
         var fifthperson = parseInt(fifthInput) - perperson
     }
+    if (sixthInput != 0  ){
+        var sixthperson = parseInt(sixthInput) - perperson
+    }
     
     //displaying output data on screen
     firstpersonEl.textContent = pname.first + " : " + "₹ " + firstperson
@@ -134,5 +153,6 @@ function cal(){
     thirdpersonEl.textContent = pname.third + " : " + "₹ " + thirdperson
     fourthpersonEl.textContent = pname.fourth + " : " + "₹ " + fourthperson
     fifthpersonEl.textContent = pname.fifth + " : " + "₹ " + fifthperson
+    sixthpersonEl.textContent = pname.sixth + " : " + "₹ " + sixthperson
     
 }
