@@ -19,19 +19,21 @@
             <button class="dropbtn">Help!</button>
             <div class="dropdown-content">
                 <a href="#">for people who contributed nothing atleast give input as ₹1 </a>
-                <a href="#">If ur 2 people then 3rd & 4th box should be given input as 0 </a>
-                <a href="#">If ur 3 people then 4th box should be given input as 0 </a>
+                <a href="#">If ur 2 people then 3rd,4th &5th box input should be 0 </a>
+                <a href="#">If ur 3 people then 4th &5th box input should be 0 </a>
             </div>
         </div>
         <div class="inside">
-            <label for="first">
-                <input type="number" id="firint" placeholder="Noinput=0"> : </label>
-            <label for="second">
-                <input type="number" id="secint" placeholder="Noinput=0"> : </label>
-            <label for="third">
-                <input type="number" id="thirint" placeholder="Noinput=0"> : </label>
-            <label for="fourth">
-                <input type="number" id="fouint" placeholder="Noinput=0"> : </label>
+            <label for="firint">
+                <input type="number" id="firint" placeholder="Enter value"> : </label>
+            <label for="secint">
+                <input type="number" id="secint" placeholder="Noinput=0" value="0"> : </label>
+            <label for="thirint">
+                <input type="number" id="thirint" placeholder="Noinput=0" value="0"> : </label>
+            <label for="fouint">
+                <input type="number" id="fouint" placeholder="Noinput=0" value="0"> : </label>
+            <label for="fifint">
+                <input type="number" id="fifint" placeholder="Noinput=0" value="0"> : </label>
             <button onclick="cal()">Calculate</button>
         </div>
     </div>
@@ -42,6 +44,8 @@
         <p id="secper-el">Name :</p>
         <p id="thiper-el">Name :</p>
         <p id="fouper-el">Name :</p>
+        <p id="fifper-el">Name :</p>
+
 
     </div>
     <script src="app.js"></script>

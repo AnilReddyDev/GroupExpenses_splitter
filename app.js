@@ -1,8 +1,42 @@
+let howmanypeoples = prompt("Enter how many peope(max-6)")
 //these variables used to take names as input from user
-let firstname = prompt("First Name :")
-let secondname = prompt("Second Name :")
-let thirdname = prompt("Third Name :")
-let fourthname = prompt("Fourth Name :")
+var pname ={}
+
+for(var i=1;i <= howmanypeoples;i++){
+    switch(i){
+        case 1:
+            pname.first = prompt("First Name :")
+            break
+        case 2:
+            pname.second = prompt("Second Name :")
+            break
+        case 3:
+            pname.third = prompt("Third Name :")
+            break
+        case 4:
+            pname.fourth = prompt("Fourth Name :")
+            break
+        case 5:
+            pname.fifth = prompt("Fifth Name :")
+            break
+        default:
+            alert("input Error")
+    }
+}
+if(pname.third==undefined){
+    pname.third=null
+}
+if(pname.fourth==undefined){
+    pname.fourth= null
+}
+if(pname.fifth==undefined){
+    pname.fifth= null
+}
+// let firstname = prompt("First Name :")
+// let secondname = prompt("Second Name :")
+// let thirdname = prompt("Third Name :")
+// let fourthname = prompt("Fourth Name :")
+// let fifthname = prompt("Fifth Name")
 
 //these variables are output div elements
 let totalEl = document.getElementById("total-el")
@@ -11,18 +45,21 @@ let firstpersonEl = document.getElementById("firper-el")
 let secondpersonEl = document.getElementById("secper-el")
 let thirdpersonEl = document.getElementById("thiper-el")
 let fourthpersonEl = document.getElementById("fouper-el")
+let fifthpersonEl = document.getElementById("fifper-el")
 
 //these variables are input div elements
-let firstnameEl = document.querySelector("label[for=first]")
-let secondnameEl = document.querySelector("label[for=second]")
-let thirdnameEl = document.querySelector("label[for=third]")
-let fourthnameEl = document.querySelector("label[for=fourth]")
+let firstnameEl = document.querySelector("label[for=firint]")
+let secondnameEl = document.querySelector("label[for=secint]")
+let thirdnameEl = document.querySelector("label[for=thirint]")
+let fourthnameEl = document.querySelector("label[for=fouint]")
+let fifthnameEl = document.querySelector("label[for=fifint]")
 
 //pushing names beside input boxs 
-firstnameEl.innerHTML += firstname
-secondnameEl.innerHTML += secondname
-thirdnameEl.innerHTML += thirdname
-fourthnameEl.innerHTML += fourthname
+firstnameEl.innerHTML += pname.first 
+secondnameEl.innerHTML += pname.second
+thirdnameEl.innerHTML += pname.third
+fourthnameEl.innerHTML += pname.fourth
+fifthnameEl.innerHTML += pname.fifth
 
 //funxtionto calculate the given input values
 function cal(){
@@ -32,8 +69,9 @@ function cal(){
     let secondInput = document.querySelector("#secint").value;
     let thirdInput = document.querySelector("#thirint").value;
     let fourthInput = document.querySelector("#fouint").value;
+    let fifthInput = document.querySelector("#fifint").value;
 
-    let total = parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput) + parseInt(fourthInput);
+    let total = parseInt(firstInput) + parseInt(secondInput) + parseInt(thirdInput) + parseInt(fourthInput) + parseInt(fifthInput);
     
     let count = 0
     if (firstInput != ""){
@@ -64,6 +102,13 @@ function cal(){
         count = count - 1
     }
 
+    if (fifthInput != ""){
+        count = count + 1
+    }
+    if(fifthInput == 0){
+        count = count - 1
+    }
+
     totalEl.textContent = "Total : " + "₹ " + total;
     let perperson = total/count
     perpersonEl.textContent = "Per Person : " + "₹ " + perperson;
@@ -79,11 +124,15 @@ function cal(){
     if (fourthInput != 0  ){
         var fourthperson = parseInt(fourthInput) - perperson
     }
+    if (fifthInput != 0  ){
+        var fifthperson = parseInt(fifthInput) - perperson
+    }
     
     //displaying output data on screen
-    firstpersonEl.textContent = firstname + " : " + "₹ " + firstperson
-    secondpersonEl.textContent = secondname + " : " + "₹ " + secondperson
-    thirdpersonEl.textContent = thirdname + " : " + "₹ " + thirdperson
-    fourthpersonEl.textContent = fourthname + " : " + "₹ " + fourthperson
+    firstpersonEl.textContent = pname.first + " : " + "₹ " + firstperson
+    secondpersonEl.textContent = pname.second + " : " + "₹ " + secondperson
+    thirdpersonEl.textContent = pname.third + " : " + "₹ " + thirdperson
+    fourthpersonEl.textContent = pname.fourth + " : " + "₹ " + fourthperson
+    fifthpersonEl.textContent = pname.fifth + " : " + "₹ " + fifthperson
     
 }
